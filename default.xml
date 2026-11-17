@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<manifest>
+  <!-- AOSP sources are pinned to the release baseline.  The droidlet project
+       carries the build overlay (build/aosp, meson.build), the source patches
+       and the link/apply scripts.  Projects not used by the host build are
+       intentionally omitted. -->
+  <remote name="aosp" fetch="https://android.googlesource.com" />
+  <remote name="madushan1000" fetch="https://github.com/madushan1000" />
+  <default revision="android17-release" remote="aosp" sync-j="8" />
+
+  <!-- Native libs -->
+  <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
+  <project path="bionic" name="platform/bionic" groups="pdk" />
+
+  <project path="system/unwinding" name="platform/system/unwinding" groups="pdk" />
+  <project path="system/libprocinfo" name="platform/system/libprocinfo" groups="pdk" />
+  <project path="system/core" name="platform/system/core" groups="pdk" />
+  <project path="system/logging" name="platform/system/logging" groups="pdk" />
+  <project path="system/libbase" name="platform/system/libbase" groups="pdk" />
+  <project path="system/libziparchive" name="platform/system/libziparchive" groups="pdk" />
+
+  <project path="frameworks/base" name="platform/frameworks/base" groups="pdk-cw-fs,pdk-fs,sysui-studio" />
+  <project path="frameworks/native" name="platform/frameworks/native" groups="pdk,sysui-studio" />
+
+  <project path="external/dlmalloc" name="platform/external/dlmalloc" groups="pdk" />
+  <project path="external/lzma" name="platform/external/lzma" groups="pdk" />
+  <project path="external/cpu_features" name="platform/external/cpu_features" groups="pdk" />
+  <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" />
+
+
+  <project path="external/sqlite" name="platform/external/sqlite" groups="pdk" />
+  <project path="system/memory/libmeminfo" name="platform/system/memory/libmeminfo" groups="pdk" />
+  <project path="external/fdlibm" name="platform/external/fdlibm" groups="pdk" />
+
+  <!-- ART -->
+  <project path="art" name="platform/art" groups="pdk" />
+
+  <!-- Java libs -->
+  <project path="libcore" name="platform/libcore" groups="pdk,sysui-studio" />
+  <project path="tools/platform-compat" name="tools/platform-compat" groups="pdk-cw-fs,pdk-fs,pdk,sysui-studio" />
+  <project path="frameworks/libs/modules-utils" name="platform/frameworks/libs/modules-utils" groups="pdk-cw-fs,pdk-fs,sysui-studio" />
+  <project path="external/okhttp" name="platform/external/okhttp" groups="pdk" />
+  <project path="external/icu" name="platform/external/icu" groups="pdk" />
+  <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk" />
+  <project path="external/apache-xml" name="platform/external/apache-xml" groups="pdk" />
+  <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" />
+  <project path="external/flatbuffers" name="platform/external/flatbuffers" groups="pdk" />
+
+  <!-- hidl/aidl -->
+
+  <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="pdk,sysui-studio" />
+
+  <!-- graphics -->
+  <project path="external/skia" name="platform/external/skia" groups="pdk,qcom_msm8x26" />
+  <project path="external/wuffs-mirror-release-c" name="platform/external/wuffs-mirror-release-c" groups="pdk,qcom_msm8x26" />
+  <project path="frameworks/minikin" name="platform/frameworks/minikin" groups="pdk-cw-fs,pdk-fs" />
+
+  <!-- frameworks -->
+  <project path="frameworks/av" name="platform/frameworks/av" groups="pdk,sysui-studio" />
+  <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" groups="pdk-cw-fs,pdk-fs" />
+
+  <project path="external/robolectric" name="platform/external/robolectric" groups="pdk-cw-fs,pdk-fs,sysui-studio" clone-depth="1" />
+
+  <project path="droidlet" name="droidlet" remote="madushan1000" />
+  <project path="meson-src" name="meson" remote="madushan1000" revision="java-jar-stamp" />
+  <project path="subprojects/bionic_translation" name="bionic_translation" remote="madushan1000" revision="master" />
+</manifest>
