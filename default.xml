@@ -61,7 +61,7 @@
 
   <project path="external/robolectric" name="platform/external/robolectric" groups="pdk-cw-fs,pdk-fs,sysui-studio" clone-depth="1" />
 
-  <project path="droidlet" name="droidlet" remote="madushan1000" revision="main" />
+  <project path="droidlet" name="droidlet" remote="madushan1000" />
   <project path="meson-src" name="meson" remote="madushan1000" revision="java-jar-stamp" />
   <project path="subprojects/bionic_translation" name="bionic_translation" remote="madushan1000" revision="master" />
 </manifest>
